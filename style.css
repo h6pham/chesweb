@@ -1279,94 +1279,40 @@ body {
     -webkit-backdrop-filter: blur(12px);
 }
 
-/* =================================
-   CHES - GLOBAL FONT COLOR
-================================= */
-
-/* Judul utama setiap halaman */
-.page-heading h1,
-.section-heading h2,
-.materials-heading h2 {
-    color: #ffffff;
+/* MARKETPLACE SIDEBAR */
+.marketplace-section {
+    margin-top: 30px;
+    margin-bottom: 25px;
 }
 
-/* Deskripsi dan keterangan */
-.page-heading p,
-.section-heading p,
-.materials-heading p {
-    color: #dce6f5;
-}
-
-/* Judul dan informasi dashboard */
-.panel-heading h3 {
-    color: #172b4d;
-}
-
-/* Navigasi sidebar */
-.nav-link {
+.marketplace-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 12px;
+    margin-bottom: 5px;
+    text-decoration: none;
     color: #778398;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 9px;
+    transition: .2s ease;
 }
 
-.nav-link.active {
+.marketplace-link img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.marketplace-link small {
+    margin-left: auto;
+    font-size: 13px;
+    color: #a0aabc;
+}
+
+.marketplace-link:hover {
+    background: #edf3ff;
     color: #3869e8;
-}
-
-/* Breadcrumb */
-.breadcrumb {
-    color: #8792a5;
-}
-
-.breadcrumb strong {
-    color: #172b4d;
-}
-
-/* Nama profil di topbar */
-.top-profile {
-    color: #172b4d;
-}
-
-/* =================================
-   CHES - GLOBAL FONT COLOR
-================================= */
-
-/* Judul utama setiap halaman */
-.page-heading h1,
-.section-heading h2,
-.materials-heading h2 {
-    color: #ffffff;
-}
-
-/* Deskripsi dan keterangan */
-.page-heading p,
-.section-heading p,
-.materials-heading p {
-    color: #dce6f5;
-}
-
-/* Judul dan informasi dashboard */
-.panel-heading h3 {
-    color: #172b4d;
-}
-
-/* Navigasi sidebar */
-.nav-link {
-    color: #778398;
-}
-
-.nav-link.active {
-    color: #3869e8;
-}
-
-/* Breadcrumb */
-.breadcrumb {
-    color: #8792a5;
-}
-
-.breadcrumb strong {
-    color: #172b4d;
-}
-
-/* Nama profil di topbar */
-.top-profile {
-    color: #172b4d;
+    transform: translateX(3px);
 }
