@@ -1,3 +1,4 @@
+style.css :
 :root {
     --navy: #172b4d;
     --blue: #3869e8;
@@ -1277,42 +1278,4 @@ body {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-}
-
-/* MARKETPLACE SIDEBAR */
-.marketplace-section {
-    margin-top: 30px;
-    margin-bottom: 25px;
-}
-
-.marketplace-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 11px 12px;
-    margin-bottom: 5px;
-    text-decoration: none;
-    color: #778398;
-    font-size: 12px;
-    font-weight: 600;
-    border-radius: 9px;
-    transition: .2s ease;
-}
-
-.marketplace-link img {
-    width: 25px;
-    height: 25px;
-    object-fit: contain;
-}
-
-.marketplace-link small {
-    margin-left: auto;
-    font-size: 13px;
-    color: #a0aabc;
-}
-
-.marketplace-link:hover {
-    background: #edf3ff;
-    color: #3869e8;
-    transform: translateX(3px);
 }
