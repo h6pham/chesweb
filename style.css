@@ -1279,3 +1279,49 @@ body {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
+
+/* =================================
+   CHES - GLOBAL FONT COLOR
+================================= */
+
+/* Judul utama setiap halaman */
+.page-heading h1,
+.section-heading h2,
+.materials-heading h2 {
+    color: #ffffff;
+}
+
+/* Deskripsi dan keterangan */
+.page-heading p,
+.section-heading p,
+.materials-heading p {
+    color: #dce6f5;
+}
+
+/* Judul dan informasi dashboard */
+.panel-heading h3 {
+    color: #172b4d;
+}
+
+/* Navigasi sidebar */
+.nav-link {
+    color: #778398;
+}
+
+.nav-link.active {
+    color: #3869e8;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    color: #8792a5;
+}
+
+.breadcrumb strong {
+    color: #172b4d;
+}
+
+/* Nama profil di topbar */
+.top-profile {
+    color: #172b4d;
+}
