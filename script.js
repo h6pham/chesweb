@@ -1,1281 +1,568 @@
-
-:root {
-    --navy: #172b4d;
-    --blue: #3869e8;
-    --light-blue: #edf3ff;
-    --bg: #f5f7fb;
-    --white: #ffffff;
-    --text: #24324a;
-    --muted: #8792a5;
-    --border: #e9edf4;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-}
-
-button, input, textarea {
-    font-family: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-/* =========================
-   MAIN LAYOUT
-========================= */
-
-.app {
-    min-height: 100vh;
-}
-
-.sidebar {
-    width: 250px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: var(--white);
-    border-right: 1px solid var(--border);
-    padding: 28px 20px;
-    display: flex;
-    flex-direction: column;
-    z-index: 20;
-    transition: .3s ease;
-}
-
-/* =========================
-   BRAND
-========================= */
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 55px;
-}
-
-.brand-icon {
-    width: 43px;
-    height: 43px;
-    background: var(--navy);
-    color: white;
-    display: grid;
-    place-items: center;
-    border-radius: 12px;
-    font-size: 23px;
-    font-weight: 800;
-}
-
-.brand h2 {
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: var(--navy);
-}
-
-.brand span {
-    font-size: 10px;
-    color: var(--muted);
-}
-
-/* =========================
-   NAVIGATION
-========================= */
-
-.nav-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.4px;
-    color: #a0aabc;
-    margin: 0 0 15px 10px;
-}
-
-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.nav-link {
-    padding: 14px;
-    display: flex;
-    gap: 13px;
-    align-items: center;
-    border-radius: 9px;
-    color: #778398;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: .2s;
-    text-decoration: none;
-}
-
-.nav-link span {
-    font-size: 19px;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--blue);
-    background: var(--light-blue);
-}
-
-/* =========================
-   SIDEBAR BOTTOM
-========================= */
-
-.sidebar-bottom {
-    margin-top: auto;
-}
-
-.sidebar-info {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    padding: 13px;
-    background: #f7f9fd;
-    border-radius: 10px;
-}
-
-.info-icon {
-    color: var(--blue);
-    font-size: 20px;
-}
-
-.sidebar-info strong {
-    display: block;
-    font-size: 11px;
-}
-
-.sidebar-info small {
-    color: var(--muted);
-    font-size: 9px;
-}
-
-.sidebar-footer {
-    text-align: center;
-    font-size: 10px;
-    color: #a1aaba;
-    margin-top: 20px;
-}
-
-/* =========================
-   MAIN CONTENT
-========================= */
-
-.main-content {
-    margin-left: 250px;
-    min-height: 100vh;
-}
-
-.topbar {
-    height: 75px;
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-    padding: 0 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-.breadcrumb {
-    font-size: 12px;
-    color: var(--muted);
-}
-
-.breadcrumb strong {
-    color: var(--text);
-}
-
-.top-profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--light-blue);
-    color: var(--blue);
-    display: grid;
-    place-items: center;
-    font-weight: 700;
-    background-size: cover;
-    background-position: center;
-}
-
-.menu-toggle {
-    display: none;
-    border: none;
-    background: none;
-    font-size: 22px;
-}
-
-.content {
-    padding: 38px 40px;
-    max-width: 1500px;
-    margin: auto;
-}
-
-/* =========================
-   PAGE NAVIGATION
-========================= */
-
-.page {
-    display: none;
-}
-
-.page.active {
-    display: block;
-}
-
-/* =========================
-   GENERAL HEADING
-========================= */
-
-.eyebrow {
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    font-weight: 700;
-    color: var(--blue);
-}
-
-h1 {
-    font-size: 27px;
-    color: var(--navy);
-    margin: 9px 0;
-}
-
-.page-heading {
-    margin-bottom: 30px;
-}
-
-.page-heading p,
-.section-heading p {
-    font-size: 12px;
-    color: var(--muted);
-}
-
-/* =========================
-   DASHBOARD WELCOME
-========================= */
-
-.welcome {
-    background: linear-gradient(115deg, #172b4d, #315d9e);
-    color: white;
-    padding: 35px 38px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 35px;
-    overflow: hidden;
-}
-
-.welcome .eyebrow {
-    color: #b7d0ff;
-}
-
-.welcome h1 {
-    color: white;
-    font-size: 25px;
-    margin: 12px 0;
-}
-
-.welcome p {
-    color: #d1def3;
-    font-size: 12px;
-}
-
-.welcome-decoration {
-    font-size: 80px;
-    color: #ffffff30;
-}
-
-/* =========================
-   DASHBOARD STATISTICS
-========================= */
-
-.section-heading {
-    margin-bottom: 18px;
-}
-
-.section-heading h2 {
-    font-size: 17px;
-    margin-bottom: 5px;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    margin-bottom: 25px;
-}
-
-.stat-card {
-    background: white;
-    border: 1px solid var(--border);
-    padding: 22px;
-    border-radius: 12px;
-    transition: .2s;
-}
-
-.stat-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px #172b4d0a;
-}
-
-.stat-icon {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-    display: grid;
-    place-items: center;
-    font-size: 19px;
-    margin-bottom: 18px;
-}
-
-.blue {
-    background: #edf3ff;
-    color: #356ae6;
-}
-
-.purple {
-    background: #f2edff;
-    color: #8256d8;
-}
-
-.green {
-    background: #e9f8ef;
-    color: #25a76a;
-}
-
-.stat-card span {
-    color: var(--muted);
-    font-size: 11px;
-}
-
-.stat-card h2 {
-    font-size: 28px;
-    color: var(--navy);
-    margin: 8px 0 5px;
-}
-
-.stat-card small {
-    font-size: 10px;
-    color: #a2adbd;
-}
-
-/* =========================
-   DASHBOARD PANELS
-========================= */
-
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 20px;
-}
-
-.panel {
-    background: white;
-    border: 1px solid var(--border);
-    padding: 23px;
-    border-radius: 12px;
-}
-
-.panel-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 24px;
-}
-
-.panel-heading h3 {
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-.panel-heading p {
-    font-size: 10px;
-    color: var(--muted);
-}
-
-.status {
-    color: #20a46a;
-    background: #e9f8ef;
-    padding: 7px 12px;
-    border-radius: 20px;
-    font-size: 10px;
-}
-
-/* COURSE PREVIEW */
-
-.course-preview {
-    background: #f5f8ff;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 17px;
-    border-radius: 10px;
-}
-
-.course-icon {
-    font-size: 28px;
-    background: white;
-    width: 55px;
-    height: 55px;
-    display: grid;
-    place-items: center;
-    border-radius: 12px;
-    flex-shrink: 0;
-}
-
-.course-info h3 {
-    font-size: 15px;
-    margin: 6px 0;
-}
-
-.course-info p {
-    font-size: 11px;
-    color: var(--muted);
-}
-
-.course-bottom {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 22px;
-    font-size: 10px;
-    color: var(--muted);
-    align-items: center;
-}
-
-.text-button {
-    border: none;
-    background: none;
-    color: var(--blue);
-    font-size: 11px;
-    font-weight: 700;
-}
-
-/* ACTIVITY */
-
-.activity-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.activity-item {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 12px;
-}
-
-.activity-icon {
-    background: var(--light-blue);
-    color: var(--blue);
-    width: 35px;
-    height: 35px;
-    display: grid;
-    place-items: center;
-    border-radius: 9px;
-    flex-shrink: 0;
-}
-
-.activity-item strong {
-    font-size: 11px;
-    display: block;
-}
-
-.activity-item small {
-    color: var(--muted);
-    font-size: 9px;
-}
-
-.empty-state {
-    color: var(--muted);
-    text-align: center;
-    padding: 20px;
-    font-size: 11px;
-}
-
-/* =========================
-   PROFILE PAGE
-========================= */
-
-.profile-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 13px;
-    overflow: hidden;
-}
-
-.profile-cover {
-    height: 145px;
-    background: linear-gradient(110deg, #172b4d, #4777b9);
-}
-
-.profile-body {
-    padding: 0 35px 35px;
-}
-
-.profile-avatar {
-    width: 95px;
-    height: 95px;
-    border: 5px solid white;
-    background: var(--light-blue);
-    color: var(--blue);
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    margin-top: -48px;
-    font-size: 30px;
-    font-weight: 700;
-    background-size: cover;
-    background-position: center;
-}
-
-.profile-name {
-    margin-top: 10px;
-}
-
-.profile-name h2 {
-    font-size: 20px;
-}
-
-.profile-name p {
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 5px;
-}
-
-.edit-profile-btn {
-    float: right;
-    margin-top: -45px;
-}
-
-.profile-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    margin-top: 35px;
-}
-
-.detail-item {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 15px;
-}
-
-.detail-item span {
-    display: block;
-    color: var(--muted);
-    font-size: 10px;
-    margin-bottom: 8px;
-}
-
-.detail-item strong {
-    font-size: 12px;
-    font-weight: 600;
-    overflow-wrap: anywhere;
-}
-
-/* =========================
-   COURSE PAGE
-========================= */
-
-.course-header {
-    background: white;
-    padding: 25px;
-    border: 1px solid var(--border);
-    border-radius: 13px;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    margin-bottom: 35px;
-}
-
-.course-header-icon {
-    width: 65px;
-    height: 65px;
-    display: grid;
-    place-items: center;
-    background: var(--light-blue);
-    border-radius: 12px;
-    font-size: 29px;
-    flex-shrink: 0;
-}
-
-.course-header-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.course-header-info h2 {
-    font-size: 18px;
-    margin: 7px 0;
-}
-
-.course-header-info p {
-    font-size: 11px;
-    color: var(--muted);
-}
-
-.materials-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.materials-heading h2 {
-    font-size: 17px;
-    margin-bottom: 5px;
-}
-
-.materials-heading p {
-    font-size: 11px;
-    color: var(--muted);
-}
-
-/* MATERIAL LIST */
-
-.materials-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 17px;
-}
-
-.empty-card {
-    background: white;
-    border: 1px dashed #d5deed;
-    border-radius: 12px;
-    padding: 55px 20px;
-    text-align: center;
-    grid-column: 1 / -1;
-}
-
-.empty-card div {
-    font-size: 38px;
-    margin-bottom: 15px;
-}
-
-.empty-card h3 {
-    font-size: 15px;
-    margin-bottom: 8px;
-}
-
-.empty-card p {
-    color: var(--muted);
-    font-size: 11px;
-    margin-bottom: 20px;
-}
-
-/* MATERIAL CARD */
-
-.material-card {
-    background: white;
-    border: 1px solid var(--border);
-    padding: 20px;
-    border-radius: 12px;
-    transition: .2s;
-}
-
-.material-card:hover {
-    border-color: #b9cdf8;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px #172b4d0a;
-}
-
-.material-top {
-    display: flex;
-    align-items: flex-start;
-    gap: 13px;
-}
-
-.material-icon {
-    background: var(--light-blue);
-    color: var(--blue);
-    width: 43px;
-    height: 43px;
-    display: grid;
-    place-items: center;
-    border-radius: 10px;
-    font-size: 18px;
-    flex-shrink: 0;
-}
-
-.material-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.material-info h3 {
-    font-size: 13px;
-    margin: 3px 0 7px;
-    overflow-wrap: anywhere;
-}
-
-.material-info p {
-    color: var(--muted);
-    font-size: 10px;
-    overflow-wrap: anywhere;
-}
-
-.material-date {
-    font-size: 9px;
-    color: #9aa5b5;
-    margin-top: 18px;
-    padding-top: 13px;
-    border-top: 1px solid var(--border);
-}
-
-.material-actions {
-    display: flex;
-    gap: 7px;
-    margin-top: 15px;
-}
-
-.action-button {
-    flex: 1;
-    border: 1px solid var(--border);
-    background: white;
-    padding: 8px;
-    border-radius: 6px;
-    font-size: 10px;
-    color: var(--text);
-    transition: .2s;
-}
-
-.action-button:hover {
-    background: var(--light-blue);
-    color: var(--blue);
-}
-
-.action-button.delete:hover {
-    background: #fff0f0;
-    color: #d33;
-    border-color: #ffd1d1;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-.primary-button {
-    border: none;
-    background: var(--blue);
-    color: white;
-    padding: 11px 17px;
-    border-radius: 8px;
-    font-size: 11px;
-    font-weight: 600;
-    transition: .2s;
-}
-
-.primary-button:hover {
-    background: #2453c1;
-    transform: translateY(-1px);
-}
-
-.outline-button {
-    border: 1px solid var(--border);
-    background: white;
-    color: var(--text);
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 11px;
-    font-weight: 600;
-    transition: .2s;
-}
-
-.outline-button:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-}
-
-/* =========================
-   MODAL
-========================= */
-
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: #101d35a6;
-    z-index: 100;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-}
-
-.modal-overlay.show {
-    display: flex;
-}
-
-.modal {
-    background: white;
-    width: 100%;
-    max-width: 490px;
-    max-height: 90vh;
-    overflow-y: auto;
-    border-radius: 14px;
-    padding: 25px;
-    animation: modalIn .2s ease;
-}
-
-@keyframes modalIn {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+const $ = id => document.getElementById(id);
+
+const defaultData = {
+    profile: {
+        name: "Your Name",
+        nim: "",
+        university: "Universitas Budi Luhur",
+        major: "Teknik Informatika",
+        email: "",
+        bio: "",
+        photo: ""
+    },
+    course: {
+        name: "Nama Mata Kuliah",
+        lecturer: "Nama Dosen"
+    },
+    materials: []
+};
+
+let data;
+
+try {
+    data = JSON.parse(localStorage.getItem("chesData")) || defaultData;
+} catch {
+    data = defaultData;
+}
+
+data.profile = { ...defaultData.profile, ...data.profile };
+data.course = { ...defaultData.course, ...data.course };
+data.materials = Array.isArray(data.materials) ? data.materials : [];
+
+function saveData() {
+    try {
+        localStorage.setItem("chesData", JSON.stringify(data));
+        updateDashboard();
+        renderMaterials();
+        renderProfile();
+        renderCourse();
+    } catch {
+        alert("Penyimpanan penuh. Hapus beberapa file atau gunakan file berukuran lebih kecil.");
     }
 }
 
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 22px;
-}
 
-.modal-header h2 {
-    font-size: 17px;
-}
+// =========================
+// NAVIGATION WITH TRANSITION
+// =========================
 
-.modal-header button {
-    border: none;
-    background: none;
-    font-size: 19px;
-    color: var(--muted);
-}
+let currentPage = "dashboard";
+let isNavigating = false;
 
-.modal form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+function showPage(page) {
 
-.modal label {
-    font-size: 11px;
-    font-weight: 600;
-    margin-top: 6px;
-}
+    // Mencegah perpindahan ketika halaman belum selesai
+    if (isNavigating || page === currentPage) return;
 
-.modal input,
-.modal textarea {
-    border: 1px solid var(--border);
-    border-radius: 7px;
-    padding: 11px;
-    font-size: 11px;
-    outline: none;
-    width: 100%;
-    color: var(--text);
-    background: white;
-}
+    // Cari halaman berdasarkan ID
+    const targetPage =
+        document.getElementById(page) ||
+        document.getElementById("page-" + page) ||
+        document.getElementById(page + "Page");
 
-.modal input:focus,
-.modal textarea:focus {
-    border-color: var(--blue);
-    box-shadow: 0 0 0 3px #3869e815;
-}
-
-.modal textarea {
-    resize: vertical;
-    line-height: 1.7;
-}
-
-.file-note {
-    color: var(--muted);
-    font-size: 9px;
-}
-
-.existing-file {
-    font-size: 10px;
-    color: var(--blue);
-}
-
-.modal-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-/* =========================
-   DETAIL MATERIAL
-========================= */
-
-.detail-content {
-    font-size: 12px;
-    line-height: 1.9;
-    overflow-wrap: anywhere;
-}
-
-.detail-content .summary {
-    white-space: pre-wrap;
-}
-
-.detail-content h4 {
-    margin: 20px 0 8px;
-    font-size: 13px;
-}
-
-.detail-content a {
-    color: var(--blue);
-    text-decoration: none;
-}
-
-.detail-content a:hover {
-    text-decoration: underline;
-}
-
-.detail-meta {
-    color: var(--muted);
-    font-size: 10px;
-    margin-bottom: 15px;
-}
-
-.detail-file {
-    display: inline-block;
-    margin-top: 15px;
-}
-
-/* =========================
-   RESPONSIVE TABLET
-========================= */
-
-@media (max-width: 1000px) {
-
-    .dashboard-grid {
-        grid-template-columns: 1fr;
+    if (!targetPage) {
+        console.error("Halaman tidak ditemukan:", page);
+        return;
     }
 
-    .content {
-        padding: 30px 25px;
+    const currentActive = document.querySelector(".page.active");
+
+    isNavigating = true;
+
+    // Hapus status navigasi aktif
+    document.querySelectorAll(".nav-link").forEach(link => {
+        link.classList.remove("active");
+    });
+
+    // Aktifkan menu yang dipilih
+    const activeLink = document.querySelector(
+        `.nav-link[data-page="${page}"]`
+    );
+
+    if (activeLink) {
+        activeLink.classList.add("active");
+    }
+
+    // Update breadcrumb
+    const breadcrumb = document.getElementById("breadcrumb");
+
+    if (breadcrumb) {
+        breadcrumb.textContent =
+            page === "dashboard" ? "Dashboard" :
+            page === "profile" ? "Profile" :
+            "Mata Kuliah";
+    }
+
+    // Tutup sidebar mobile
+    const sidebar = document.getElementById("sidebar");
+
+    if (sidebar) {
+        sidebar.classList.remove("open");
+    }
+
+    // Animasi keluar halaman sebelumnya
+    if (currentActive) {
+
+        currentActive.classList.remove("active");
+        currentActive.classList.add("page-exit");
+
+        setTimeout(() => {
+
+            currentActive.classList.remove("page-exit");
+
+            // Tampilkan halaman baru
+            targetPage.classList.add("active");
+
+            // Restart animasi masuk
+            targetPage.classList.remove("page-enter");
+            void targetPage.offsetWidth;
+            targetPage.classList.add("page-enter");
+
+            currentPage = page;
+            isNavigating = false;
+
+        }, 180);
+
+    } else {
+
+        targetPage.classList.add("active");
+        targetPage.classList.remove("page-enter");
+
+        void targetPage.offsetWidth;
+
+        targetPage.classList.add("page-enter");
+
+        currentPage = page;
+        isNavigating = false;
     }
 }
 
-/* =========================
-   RESPONSIVE MOBILE
-========================= */
+document.addEventListener("click", function(e) {
 
-@media (max-width: 900px) {
+    const link = e.target.closest(".nav-link");
 
-    .sidebar {
-        transform: translateX(-100%);
+    if (!link) return;
+
+    const page = link.dataset.page;
+
+    if (!page) return;
+
+    e.preventDefault();
+    showPage(page);
+
+});
+
+// MODAL
+
+function openModal(id) {
+    $(id).classList.add("show");
+}
+
+function closeModal(id) {
+    $(id).classList.remove("show");
+}
+
+document.querySelectorAll(".modal-overlay").forEach(modal => {
+    modal.addEventListener("click", e => {
+        if (e.target === modal) {
+            modal.classList.remove("show");
+        }
+    });
+});
+
+// PROFILE
+
+function openProfileModal() {
+    const p = data.profile;
+
+    $("inputName").value = p.name;
+    $("inputNim").value = p.nim;
+    $("inputUniversity").value = p.university;
+    $("inputMajor").value = p.major;
+    $("inputEmail").value = p.email;
+    $("inputBio").value = p.bio;
+    $("inputPhoto").value = "";
+
+    openModal("profileModal");
+}
+
+$("profileForm").addEventListener("submit", async e => {
+    e.preventDefault();
+
+    const file = $("inputPhoto").files[0];
+
+    if (file && !file.type.startsWith("image/")) {
+        alert("Silakan pilih file gambar.");
+        return;
     }
 
-    .sidebar.open {
-        transform: translateX(0);
+    if (file && file.size > 1024 * 1024) {
+        alert("Ukuran foto maksimal 1 MB.");
+        return;
     }
 
-    .main-content {
-        margin-left: 0;
+    let photo = data.profile.photo;
+
+    if (file) {
+        photo = await readFile(file);
     }
 
-    .menu-toggle {
-        display: block;
-    }
+    data.profile = {
+        name: $("inputName").value,
+        nim: $("inputNim").value,
+        university: $("inputUniversity").value,
+        major: $("inputMajor").value,
+        email: $("inputEmail").value,
+        bio: $("inputBio").value,
+        photo
+    };
+
+    saveData();
+    closeModal("profileModal");
+});
+
+// COURSE
+
+function openCourseModal() {
+    $("inputCourse").value = data.course.name;
+    $("inputLecturer").value = data.course.lecturer;
+    openModal("courseModal");
 }
 
-@media (max-width: 600px) {
+$("courseForm").addEventListener("submit", e => {
+    e.preventDefault();
 
-    .topbar {
-        padding: 0 18px;
+    data.course.name = $("inputCourse").value;
+    data.course.lecturer = $("inputLecturer").value;
+
+    saveData();
+    closeModal("courseModal");
+});
+
+// MATERIAL
+
+function openMaterialModal(id = null) {
+    $("materialForm").reset();
+    $("editMaterialId").value = id || "";
+    $("existingFile").innerHTML = "";
+
+    if (id) {
+        const material = data.materials.find(m => m.id === id);
+
+        if (!material) return;
+
+        $("materialModalTitle").textContent = "Edit Materi";
+        $("inputMaterialTitle").value = material.title;
+        $("inputMaterialDescription").value = material.description;
+        $("inputMaterialContent").value = material.content;
+
+        if (material.file) {
+            $("existingFile").textContent =
+                "File saat ini: " + material.file.name;
+        }
+    } else {
+        $("materialModalTitle").textContent = "Tambah Materi";
     }
 
-    .content {
-        padding: 25px 17px;
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .materials-list {
-        grid-template-columns: 1fr;
-    }
-
-    .profile-details {
-        grid-template-columns: 1fr;
-    }
-
-    .welcome {
-        padding: 25px 20px;
-    }
-
-    .welcome h1 {
-        font-size: 20px;
-    }
-
-    .welcome-decoration {
-        font-size: 45px;
-    }
-
-    .materials-heading {
-        align-items: flex-start;
-        gap: 12px;
-        flex-direction: column;
-    }
-
-    .profile-body {
-        padding: 0 20px 25px;
-    }
-
-    .edit-profile-btn {
-        float: none;
-        margin-top: 20px;
-    }
-
-    .course-header {
-        flex-wrap: wrap;
-    }
-
-    .modal {
-        padding: 20px;
-    }
+    openModal("materialModal");
 }
 
-.avatar,
-.profile-avatar {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: var(--light-blue);
+function readFile(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
 }
 
-.avatar {
-    overflow: hidden;
-    flex-shrink: 0;
-}
+$("materialForm").addEventListener("submit", async e => {
+    e.preventDefault();
 
-.profile-avatar {
-    overflow: hidden;
-    flex-shrink: 0;
-    background-color: var(--light-blue);
-}
+    const id = $("editMaterialId").value;
+    const existing = data.materials.find(m => m.id === id);
+    const file = $("inputMaterialFile").files[0];
 
-
-/* =========================
-   PAGE NAVIGATION
-========================= */
-
-.page {
-    display: none;
-    opacity: 0;
-    width: 100%;
-}
-
-.page.active {
-    display: block;
-    opacity: 1;
-}
-
-/* ANIMATION ENTER */
-
-.page.page-enter {
-    animation: chesPageEnter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@keyframes chesPageEnter {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-        filter: blur(3px);
+    if (file && file.size > 2 * 1024 * 1024) {
+        alert("Ukuran dokumen maksimal 2 MB.");
+        return;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-    }
-}
+    let attachment = existing?.file || null;
 
-/* ANIMATION EXIT */
-
-.page.page-exit {
-    display: block;
-    animation: chesPageExit 0.18s ease forwards;
-    pointer-events: none;
-}
-
-@keyframes chesPageExit {
-    from {
-        opacity: 1;
-        transform: translateY(0);
+    if (file) {
+        attachment = {
+            name: file.name,
+            type: file.type || "application/octet-stream",
+            data: await readFile(file)
+        };
     }
 
-    to {
-        opacity: 0;
-        transform: translateY(-8px);
+    const material = {
+        id: existing?.id || String(Date.now()),
+        title: $("inputMaterialTitle").value.trim(),
+        description: $("inputMaterialDescription").value.trim(),
+        content: $("inputMaterialContent").value,
+        file: attachment,
+        date: existing?.date || new Date().toLocaleDateString("id-ID"),
+        updated: new Date().toLocaleString("id-ID")
+    };
+
+    if (!material.title) return;
+
+    if (existing) {
+        data.materials = data.materials.map(m =>
+            m.id === id ? material : m
+        );
+    } else {
+        data.materials.unshift(material);
+    }
+
+    saveData();
+    closeModal("materialModal");
+});
+
+// DELETE MATERIAL
+
+function deleteMaterial(id) {
+    const material = data.materials.find(m => m.id === id);
+
+    if (!material) return;
+
+    if (confirm(`Yakin ingin menghapus "${material.title}"?`)) {
+        data.materials = data.materials.filter(m => m.id !== id);
+        saveData();
     }
 }
 
-/* NAVIGATION HOVER */
+// VIEW MATERIAL
 
-.nav-link {
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
-}
+function viewMaterial(id) {
+    const material = data.materials.find(m => m.id === id);
 
-.nav-link:hover {
-    transform: translateX(4px);
-}
+    if (!material) return;
 
-/* REDUCE MOTION */
+    $("detailTitle").textContent = material.title;
 
-@media (prefers-reduced-motion: reduce) {
-    .page.page-enter,
-    .page.page-exit {
-        animation: none;
+    const content = $("detailContent");
+    content.replaceChildren();
+
+    const meta = document.createElement("div");
+    meta.className = "detail-meta";
+    meta.textContent = "Ditambahkan: " + material.date;
+
+    const description = document.createElement("p");
+    description.textContent = material.description || "Tidak ada deskripsi.";
+
+    const heading = document.createElement("h4");
+    heading.textContent = "Rangkuman Materi";
+
+    const summary = document.createElement("div");
+    summary.className = "summary";
+    summary.textContent = material.content || "Belum ada rangkuman.";
+
+    content.append(meta, description, heading, summary);
+
+    if (material.file) {
+        const fileHeading = document.createElement("h4");
+        fileHeading.textContent = "Dokumen Lampiran";
+
+        const fileLink = document.createElement("a");
+        fileLink.className = "detail-file";
+        fileLink.href = material.file.data;
+        fileLink.download = material.file.name;
+        fileLink.textContent = "📎 " + material.file.name;
+
+        content.append(fileHeading, fileLink);
     }
 
-    .nav-link {
-        transition: none;
+    openModal("detailModal");
+}
+
+// RENDER MATERIALS
+
+function renderMaterials() {
+    const container = $("materialsList");
+
+    container.replaceChildren();
+
+    if (!data.materials.length) {
+        const empty = document.createElement("div");
+        empty.className = "empty-card";
+
+        const icon = document.createElement("div");
+        icon.textContent = "📂";
+
+        const heading = document.createElement("h3");
+        heading.textContent = "Belum ada materi";
+
+        const paragraph = document.createElement("p");
+        paragraph.textContent = "Mulai tambahkan rangkuman materi perkuliahanmu.";
+
+        const button = document.createElement("button");
+        button.className = "primary-button";
+        button.textContent = "+ Tambah Materi Pertama";
+        button.onclick = () => openMaterialModal();
+
+        empty.append(icon, heading, paragraph, button);
+        container.append(empty);
+        return;
     }
+
+    data.materials.forEach(material => {
+        const card = document.createElement("div");
+        card.className = "material-card";
+
+        const top = document.createElement("div");
+        top.className = "material-top";
+
+        const icon = document.createElement("div");
+        icon.className = "material-icon";
+        icon.textContent = "▤";
+
+        const info = document.createElement("div");
+        info.className = "material-info";
+
+        const title = document.createElement("h3");
+        title.textContent = material.title;
+
+        const description = document.createElement("p");
+        description.textContent =
+            material.description || "Tidak ada deskripsi.";
+
+        info.append(title, description);
+        top.append(icon, info);
+
+        const date = document.createElement("div");
+        date.className = "material-date";
+        date.textContent = "Ditambahkan: " + material.date +
+            (material.file ? " • 📎 " + material.file.name : "");
+
+        const actions = document.createElement("div");
+        actions.className = "material-actions";
+
+        [
+            ["Lihat", () => viewMaterial(material.id), ""],
+            ["Edit", () => openMaterialModal(material.id), ""],
+            ["Hapus", () => deleteMaterial(material.id), "delete"]
+        ].forEach(([label, callback, extraClass]) => {
+            const button = document.createElement("button");
+            button.className = "action-button " + extraClass;
+            button.textContent = label;
+            button.onclick = callback;
+            actions.append(button);
+        });
+
+        card.append(top, date, actions);
+        container.append(card);
+    });
 }
 
-/* =================================
-   CHES - PHOTO BACKGROUND
-================================= */
+// PROFILE RENDER
 
-html,
-body {
-    min-height: 100%;
-    margin: 0;
+function renderProfile() {
+    const p = data.profile;
+
+    // Update nama pengguna
+    $("welcomeName").textContent = p.name || "Student";
+    $("topName").textContent = p.name || "User";
+
+    // Update informasi profil
+    $("profileDisplayName").textContent = p.name || "-";
+    $("profileName").textContent = p.name || "-";
+    $("profileNim").textContent = p.nim || "-";
+    $("profileUniversity").textContent = p.university || "-";
+    $("profileMajor").textContent = p.major || "-";
+    $("profileEmail").textContent = p.email || "-";
+    $("profileBio").textContent = p.bio || "Belum ada deskripsi.";
+
+    // Inisial nama pengguna
+    const initial = (p.name || "U").charAt(0).toUpperCase();
+
+    // Update avatar navbar dan halaman profile
+    ["topAvatar", "profileAvatar"].forEach(id => {
+
+        const avatar = $(id);
+
+        if (p.photo && p.photo.trim() !== "") {
+
+            // Jika foto tersedia, tampilkan foto
+            avatar.style.backgroundImage = `url("${p.photo}")`;
+
+            // Hilangkan inisial agar tidak menimpa foto
+            avatar.textContent = "";
+
+        } else {
+
+            // Jika belum ada foto, tampilkan inisial
+            avatar.style.backgroundImage = "none";
+            avatar.textContent = initial;
+
+        }
+
+    });
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: var(--text);
+// COURSE RENDER
+
+function renderCourse() {
+    $("courseTitle").textContent = data.course.name;
+    $("dashboardCourse").textContent = data.course.name;
+
+    $("courseLecturer").textContent = data.course.lecturer || "Belum diisi";
+    $("dashboardLecturer").textContent = data.course.lecturer || "Belum diisi";
 }
 
-/* Background utama dibuat transparan */
-.app {
-    min-height: 100vh;
-    background: transparent;
+// DASHBOARD
+
+function updateDashboard() {
+    $("totalMaterials").textContent = data.materials.length;
+
+    $("totalFiles").textContent = data.materials.filter(m => m.file).length;
+
+    $("dashboardCount").textContent =
+        data.materials.length + " materi tersedia";
+
+    const activities = $("recentActivities");
+    activities.replaceChildren();
+
+    if (!data.materials.length) {
+        const empty = document.createElement("div");
+        empty.className = "empty-state";
+        empty.textContent = "Belum ada aktivitas.";
+        activities.append(empty);
+        return;
+    }
+
+    data.materials.slice(0, 4).forEach(material => {
+        const item = document.createElement("div");
+        item.className = "activity-item";
+
+        const icon = document.createElement("div");
+        icon.className = "activity-icon";
+        icon.textContent = "▤";
+
+        const info = document.createElement("div");
+
+        const title = document.createElement("strong");
+        title.textContent = material.title;
+
+        const date = document.createElement("small");
+        date.textContent = "Materi ditambahkan • " + material.date;
+
+        info.append(title, date);
+        item.append(icon, info);
+        activities.append(item);
+    });
 }
 
-/* Sidebar transparan */
-.sidebar {
-    width: 250px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: var(--white);
-    border-right: 1px solid var(--border);
-    padding: 28px 20px;
-    display: flex;
-    flex-direction: column;
-    z-index: 20;
-    transition: .3s ease;
+// INITIALIZATION
+
+function init() {
+    renderProfile();
+    renderCourse();
+    renderMaterials();
+    updateDashboard();
 }
 
-/* Topbar transparan */
-.topbar {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
-
-/* Area konten tidak menutupi foto */
-.main-content {
-    margin-left: 250px;
-    min-height: 100vh;
-
-    background:
-        linear-gradient(
-            rgba(10, 25, 50, 0.40),
-            rgba(10, 25, 50, 0.40)
-        ),
-        url("../img/niujins.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-/* BACKGROUND FOTO KHUSUS AREA KONTEN */
-
-.main-content {
-    position: relative;
-    isolation: isolate;
-    margin-left: 250px;
-    min-height: 100vh;
-    background: transparent;
-}
-
-/* Layer foto */
-.main-content::before {
-    content: "";
-    position: fixed;
-
-    /* Mulai tepat setelah sidebar */
-    top: 0;
-    left: 250px;
-    right: 0;
-    bottom: 0;
-
-    background-image:
-        linear-gradient(
-            rgba(10, 25, 50, 0.40),
-            rgba(10, 25, 50, 0.40)
-        ),
-        url("../img/niujins.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* Sidebar tetap putih dan berada di atas layer */
-.sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 250px;
-    height: 100vh;
-    background: #ffffff;
-    z-index: 20;
-}
-
-/* Area konten transparan */
-.content {
-    background: transparent;
-}
-
-/* Topbar tetap terlihat */
-.topbar {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
+init();
