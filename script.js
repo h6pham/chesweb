@@ -152,6 +152,15 @@ document.addEventListener("click", function(e) {
 
 });
 
+// SIDEBAR TOGGLE
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+
+    if (sidebar) {
+        sidebar.classList.toggle("open");
+    }
+}
+
 // MODAL
 
 function openModal(id) {
