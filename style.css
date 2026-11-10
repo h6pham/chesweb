@@ -1213,7 +1213,7 @@ body {
             rgba(10, 25, 50, 0.40),
             rgba(10, 25, 50, 0.40)
         ),
-        url("../img/niujins.jpg");
+        url("../assets/niujins.jpg");
 
     background-size: cover;
     background-position: center;
@@ -1247,7 +1247,7 @@ body {
             rgba(10, 25, 50, 0.40),
             rgba(10, 25, 50, 0.40)
         ),
-        url("../img/niujins.jpg");
+        url("../assets/niujins.jpg");
 
     background-size: cover;
     background-position: center;
