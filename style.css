@@ -168,7 +168,7 @@ nav {
 }
 
 /* =========================
-   MAIN CONTENT
+   MAIN CONTENT & TOPBAR
 ========================= */
 
 .main-content {
@@ -178,8 +178,6 @@ nav {
 
 .topbar {
     height: 75px;
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
     padding: 0 40px;
     display: flex;
     align-items: center;
@@ -187,6 +185,8 @@ nav {
     position: sticky;
     top: 0;
     z-index: 10;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
 }
 
 .breadcrumb {
@@ -198,12 +198,45 @@ nav {
     color: var(--text);
 }
 
+/* Marketplace dan profil */
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+}
+
+.marketplace-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.marketplace-link {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.marketplace-link img {
+    display: block;
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
 .top-profile {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 12px;
     font-weight: 600;
+    flex-shrink: 0;
 }
 
 .avatar {
@@ -217,6 +250,7 @@ nav {
     font-weight: 700;
     background-size: cover;
     background-position: center;
+    flex-shrink: 0;
 }
 
 .menu-toggle {
@@ -224,12 +258,7 @@ nav {
     border: none;
     background: none;
     font-size: 22px;
-}
-
-.content {
-    padding: 38px 40px;
-    max-width: 1500px;
-    margin: auto;
+    cursor: pointer;
 }
 
 /* =========================
