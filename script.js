@@ -1,3 +1,13 @@
+
+// =====================================
+// CHES - READ ONLY WEBSITE
+// =====================================
+
+
+// =====================================
+// 1. DATA PROFIL
+// =====================================
+
 const profile = {
     name: "Bintang Naufal Syarief",
     nim: "2311501361",
@@ -10,28 +20,65 @@ const profile = {
     photo: "assets/pasfoto.jpg"
 };
 
+
+// =====================================
+// 2. DATA MATA KULIAH
+// =====================================
+
 const course = {
     name: "Cyberpreneurship",
-    lecturer: "Subandi, S.Kom., M.Kom."
+    lecturer: "Materi Perkuliahan"
 };
 
-const notes = [
 
+// =====================================
+// 3. DATA ARSIP RANGKUMAN
+// =====================================
+
+// TAMBAHKAN RANGKUMAN BARU DI BAGIAN INI.
+//
+// Contoh:
+// {
+//     id: 3,
+//     title: "Pertemuan 3 - Judul Materi",
+//     description: "Deskripsi singkat materi",
+//     date: "11 November 2026",
+//     content: `
+//     Isi rangkuman materi di sini.
+//
+//     Bisa membuat paragraf baru dengan Enter.
+//
+//     Bisa menambahkan poin-poin:
+//     - Poin pertama
+//     - Poin kedua
+//     `,
+//     file: "assets/dokumen/materi-3.pdf"
+// }
+//
+// Jika tidak ada dokumen, gunakan:
+// file: ""
+//
+// =====================================
+
+
+const materials = [
     {
         id: 1,
-        course: "Cyberpreneurship",
         title: "Pertemuan 1 - Pengenalan Cyberpreneurship",
-        summary: `
--
+        description: "Pengenalan konsep dasar Cyberpreneurship.",
+        date: "Pertemuan 1",
+        content: `
+Belum ada rangkuman untuk pertemuan ini.
         `,
-        createdAt: "2026-11-11"
+        file: ""
     },
 
     {
         id: 2,
-        course: "Cyberpreneurship",
         title: "Pertemuan 2 - Memulai Cyberpreneurship",
-        summary: `
+        description: "Rangkuman materi tentang konsep dan model bisnis Cyberpreneurship.",
+        date: "Pertemuan 2",
+        content: `
 1. Pengertian Cyberpreneurship
 Cyberpreneurship adalah kegiatan menjalankan bisnis secara online dengan memanfaatkan internet untuk memperoleh penghasilan. Seorang cyberpreneur biasanya menggunakan website, media sosial, dan berbagai tools digital untuk memasarkan produk atau jasa.
 
@@ -61,20 +108,22 @@ CTPM merupakan empat tahapan penting dalam membangun bisnis online:
 Kesimpulan
 Cyberpreneurship merupakan peluang bisnis yang memanfaatkan teknologi internet untuk memperoleh penghasilan. Keberhasilannya membutuhkan strategi yang tepat, konsistensi, pemilihan model bisnis, serta penerapan rumus CTPM.
         `,
-        createdAt: "2026-11-11"
+        file: ""
     },
 
     {
         id: 3,
-        course: "Cyberpreneurship",
         title: "Pertemuan 3 - Domain dan Hosting",
-        summary: `
+        description: "Rangkuman materi tentang domain, hosting, cPanel, dan Softaculous.",
+        date: "Pertemuan 3",
+        content: `
 1. Domain
 Domain adalah alamat website yang memudahkan pengguna mengakses situs, contohnya google.com. Domain terhubung dengan IP Address melalui DNS.
 
 Jenis domain:
 - TLD: .com, .org, .net, .edu.
 - ccTLD: .id, .sg, .my, .jp.
+
 Pemilihan domain sebaiknya singkat, mudah diingat, sesuai brand, dan tidak melanggar hak cipta.
 
 2. Hosting
@@ -94,14 +143,15 @@ Hal yang perlu diperhatikan adalah kapasitas penyimpanan, bandwidth, lokasi serv
 Kesimpulan
 Domain adalah alamat website, sedangkan hosting merupakan tempat penyimpanan datanya. Keduanya diperlukan agar website dapat berjalan dan diakses melalui internet.
         `,
-        createdAt: "2026-11-11"
+        file: ""
     },
 
     {
         id: 4,
-        course: "Cyberpreneurship",
         title: "Pertemuan 4 - Membuat Content di Blog",
-        summary: `
+        description: "Rangkuman materi tentang pembuatan konten dan penggunaan Blogger.",
+        date: "Pertemuan 4",
+        content: `
 1. Memilih Channel
 Channel adalah media untuk membagikan content, seperti Instagram, Facebook, YouTube, dan blog. Pilih 2–3 channel yang sesuai dengan target pasar, digunakan pesaing, dan mampu dikelola dengan baik.
 
@@ -114,6 +164,7 @@ Ciri-ciri content yang baik:
 - Menyertakan gambar atau video.
 - Diperbarui secara rutin.
 - Mencantumkan sumber jika mengambil informasi dari pihak lain.
+
 Etika membuat content: harus jujur, tidak menyebarkan hoax, fitnah, diskriminasi, maupun informasi yang merugikan orang lain.
 
 3. Menambahkan Content di Blog
@@ -139,14 +190,15 @@ Cara membuat postingan:
 Kesimpulan
 Content merupakan bagian penting dalam bisnis online karena dapat menarik pengunjung. Oleh karena itu, content harus menarik, bermanfaat, dan diperbarui secara rutin. Blogger dapat digunakan sebagai media pembuatan blog secara gratis.
         `,
-        createdAt: "2026-11-11"
+        file: ""
     },
 
     {
         id: 5,
-        course: "Cyberpreneurship",
         title: "Pertemuan 5 - Traffic Website",
-        summary: `
+        description: "Rangkuman materi tentang traffic dan strategi mendatangkan pengunjung website.",
+        date: "Pertemuan 5",
+        content: `
 1. Pengertian Traffic
 Traffic adalah jumlah pengunjung yang datang ke sebuah website. Traffic penting dalam bisnis online karena dapat meningkatkan peluang penjualan dan klik iklan.
 
@@ -177,14 +229,15 @@ Traffic adalah jumlah pengunjung yang datang ke sebuah website. Traffic penting 
 Kesimpulan
 Traffic merupakan faktor penting dalam bisnis online karena dapat meningkatkan peluang terjadinya transaksi. Pengunjung bisa didatangkan melalui mesin pencari, website lain, dan direct traffic. Jumlah serta sumber pengunjung dapat dipantau menggunakan tools analisis traffic.
         `,
-        createdAt: "2026-11-11"
+        file: ""
     },
 
     {
         id: 6,
-        course: "Cyberpreneurship",
         title: "Pertemuan 6 - Search Engine Optimization",
-        summary: `
+        description: "Rangkuman materi tentang search engine dan teknik SEO.",
+        date: "Pertemuan 6",
+        content: `
 1. Pengertian Search Engine
 Search engine adalah mesin pencari untuk menemukan informasi di internet, seperti Google, Bing, dan Yahoo.
 
@@ -218,6 +271,7 @@ On-Page SEO dilakukan dengan:
 - Menggunakan heading serta kata kunci yang sesuai.
 - Membuat website responsif dan mudah diakses.
 - Mengatur URL, gambar, dan navigasi website.
+
 Off-Page SEO dilakukan dengan:
 - Mendapatkan backlink dari website berkualitas.
 - Bertukar link dengan website relevan.
@@ -227,14 +281,15 @@ Off-Page SEO dilakukan dengan:
 Kesimpulan
 SEO merupakan teknik untuk meningkatkan peringkat website di mesin pencari. Keberhasilannya membutuhkan pemilihan keyword yang tepat serta optimasi on-page dan off-page agar website lebih mudah ditemukan pengunjung.
         `,
-        createdAt: "2026-11-11"
+        file: ""
     },
 
     {
         id: 7,
-        course: "Cyberpreneurship",
         title: "Pertemuan 7 - Payment Per Click",
-        summary: `
+        description: "Rangkuman materi tentang PPC dan Google AdSense.",
+        date: "Pertemuan 7",
+        content: `
 1. Pengertian PPC
 PPC (Pay Per Click) adalah sistem periklanan yang pembayarannya dihitung berdasarkan jumlah klik iklan. Dalam PPC terdapat:
 - Advertiser: Pihak yang memasang iklan dan membayar setiap klik.
@@ -257,6 +312,7 @@ Kelebihannya:
 - Iklan sesuai dengan konten.
 - Tampilan dan posisi iklan bisa diatur.
 - Tidak perlu mencari advertiser sendiri.
+
 Cara kerjanya: Advertiser membayar Google untuk memasang iklan, kemudian iklan ditampilkan di website publisher dan publisher memperoleh bagian dari pendapatan tersebut.
 
 4. Kebijakan AdSense
@@ -282,14 +338,15 @@ Iklan dapat dipasang secara otomatis melalui kode di bagian head website atau se
 Kesimpulan
 PPC merupakan sistem iklan yang menghasilkan uang berdasarkan klik. Google AdSense menjadi salah satu layanan PPC yang dapat dimanfaatkan pemilik website dan YouTube untuk memperoleh penghasilan dari iklan.
         `,
-        createdAt: "2026-11-11"
+        file: ""
     },
 
     {
-        id: 8,
-        course: "Cyberpreneurship",
+        id: 9,
         title: "Pertemuan 9 - Affiliate Marketing",
-        summary: `
+        description: "Rangkuman materi tentang affiliate marketing dan sistem komisi.",
+        date: "Pertemuan 9",
+        content: `
 1. Pengertian Affiliate Marketing
 Affiliate marketing adalah bisnis online dengan cara mempromosikan produk milik orang lain untuk mendapatkan komisi dari setiap penjualan atau tindakan melalui link afiliasi.
 
@@ -305,6 +362,7 @@ Kelebihan:
 - Tidak perlu mengurus pengiriman produk.
 - Bisa dikerjakan dari mana saja.
 - Dapat mempromosikan berbagai produk.
+
 Kekurangan:
 - Tidak memiliki data pelanggan.
 - Komisi bergantung pada ketentuan merchant.
@@ -331,11 +389,20 @@ Kekurangan:
 Kesimpulan
 Affiliate marketing adalah bisnis online dengan mempromosikan produk orang lain untuk mendapatkan komisi. Bisnis ini memiliki modal kecil karena tidak membutuhkan stok barang maupun pengiriman produk.
         `,
-        createdAt: "2026-11-11"
-   },
+        file: ""
+    }
 ];
 
+// =====================================
+// 4. ELEMENT SELECTOR
+// =====================================
+
 const $ = id => document.getElementById(id);
+
+
+// =====================================
+// 5. PROFILE RENDER
+// =====================================
 
 function renderProfile() {
 
@@ -353,6 +420,11 @@ function renderProfile() {
 
 }
 
+
+// =====================================
+// 6. COURSE RENDER
+// =====================================
+
 function renderCourse() {
 
     $("courseTitle").textContent = course.name;
@@ -360,6 +432,11 @@ function renderCourse() {
     $("courseLecturer").textContent = course.lecturer;
 
 }
+
+
+// =====================================
+// 7. MATERIAL RENDER
+// =====================================
 
 function renderMaterials() {
 
@@ -466,6 +543,11 @@ function renderMaterials() {
     });
 
 }
+
+
+// =====================================
+// 8. VIEW MATERIAL
+// =====================================
 
 function viewMaterial(id) {
 
@@ -575,6 +657,11 @@ function viewMaterial(id) {
 
 }
 
+
+// =====================================
+// 9. MODAL
+// =====================================
+
 function openModal(id) {
 
     const modal = $(id);
@@ -632,6 +719,11 @@ document.addEventListener("keydown", event => {
     }
 
 });
+
+
+// =====================================
+// 10. NAVIGATION
+// =====================================
 
 function showPage(page) {
 
@@ -701,6 +793,11 @@ document.querySelectorAll(".nav-link").forEach(link => {
 
 });
 
+
+// =====================================
+// 11. MOBILE SIDEBAR
+// =====================================
+
 const sidebar = $("sidebar");
 
 const menuToggle = $("menuToggle");
@@ -746,6 +843,11 @@ menuToggle.addEventListener("click", toggleSidebar);
 
 
 sidebarOverlay.addEventListener("click", closeSidebar);
+
+
+// =====================================
+// 12. INITIALIZATION
+// =====================================
 
 function init() {
 
