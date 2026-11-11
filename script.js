@@ -1,29 +1,14 @@
-
-// =====================================
-// CHES - READ ONLY WEBSITE
-// =====================================
-
-
-// =====================================
-// 1. DATA PROFIL
-// =====================================
-
 const profile = {
-    name: "Nama Kamu",
-    nim: "Isi NIM Kamu",
+    name: "Bintang Naufal Syarief",
+    nim: "2311501361",
     university: "Universitas Budi Luhur",
     major: "Teknik Informatika",
-    email: "email@example.com",
+    email: "binaufals09@gmail.com",
 
-    bio: "Mahasiswa yang sedang mempelajari Cyberpreneurship dan mengembangkan pengetahuan di bidang teknologi serta kewirausahaan digital.",
+    bio: "bikin web untuk matakuliah Cyberpreneurship.",
 
-    photo: "assets/profile.jpg"
+    photo: "assets/pasfoto.jpg"
 };
-
-
-// =====================================
-// 2. DATA MATA KULIAH
-// =====================================
 
 const course = {
     name: "Cyberpreneurship",
@@ -110,17 +95,7 @@ Poin-poin penting:
 
 ];
 
-
-// =====================================
-// 4. ELEMENT SELECTOR
-// =====================================
-
 const $ = id => document.getElementById(id);
-
-
-// =====================================
-// 5. PROFILE RENDER
-// =====================================
 
 function renderProfile() {
 
@@ -138,11 +113,6 @@ function renderProfile() {
 
 }
 
-
-// =====================================
-// 6. COURSE RENDER
-// =====================================
-
 function renderCourse() {
 
     $("courseTitle").textContent = course.name;
@@ -150,11 +120,6 @@ function renderCourse() {
     $("courseLecturer").textContent = course.lecturer;
 
 }
-
-
-// =====================================
-// 7. MATERIAL RENDER
-// =====================================
 
 function renderMaterials() {
 
@@ -261,11 +226,6 @@ function renderMaterials() {
     });
 
 }
-
-
-// =====================================
-// 8. VIEW MATERIAL
-// =====================================
 
 function viewMaterial(id) {
 
@@ -375,11 +335,6 @@ function viewMaterial(id) {
 
 }
 
-
-// =====================================
-// 9. MODAL
-// =====================================
-
 function openModal(id) {
 
     const modal = $(id);
@@ -437,11 +392,6 @@ document.addEventListener("keydown", event => {
     }
 
 });
-
-
-// =====================================
-// 10. NAVIGATION
-// =====================================
 
 function showPage(page) {
 
@@ -511,11 +461,6 @@ document.querySelectorAll(".nav-link").forEach(link => {
 
 });
 
-
-// =====================================
-// 11. MOBILE SIDEBAR
-// =====================================
-
 const sidebar = $("sidebar");
 
 const menuToggle = $("menuToggle");
@@ -561,11 +506,6 @@ menuToggle.addEventListener("click", toggleSidebar);
 
 
 sidebarOverlay.addEventListener("click", closeSidebar);
-
-
-// =====================================
-// 12. INITIALIZATION
-// =====================================
 
 function init() {
 
