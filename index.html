@@ -1,23 +1,34 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ches website</title>
-    <link rel="icon" type="image/png" href="assets/ches-logo.png">
 
-    <link rel="stylesheet" href="style.css?v=2">
+    <meta name="theme-color" content="#211f1c">
+    <meta name="description" content="CHES - Arsip Rangkuman Cyberpreneurship">
+
+    <title>CHES - Cyberpreneurship</title>
+
+    <link rel="icon" type="image/png" href="assets/ches-logo.png">
+    <link rel="stylesheet" href="style.css?v=3">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Barlow+Condensed:wght@500;600;700;800;900&family=Special+Elite&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <div class="app">
 
+    <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
+
         <div class="brand">
             <div class="brand-icon">C</div>
+
             <div>
                 <h2>CHES</h2>
                 <span>For Cyberpreneurship</span>
@@ -27,348 +38,301 @@
         <div class="nav-label">MENU UTAMA</div>
 
         <nav>
-            <a class="nav-link active" data-page="dashboard">
-                <span>▦</span> Dashboard
+            <a href="#profile" class="nav-link active" data-page="profile">
+                <span>♙</span>
+                Profil
             </a>
-            <a class="nav-link" data-page="profile">
-                <span>♙</span> Profile
-            </a>
-            <a class="nav-link" data-page="course">
-                <span>▤</span> Mata Kuliah
+
+            <a href="#archive" class="nav-link" data-page="archive">
+                <span>▤</span>
+                Arsip Rangkuman
             </a>
         </nav>
 
         <div class="sidebar-bottom">
+
             <div class="sidebar-info">
                 <div class="info-icon">✦</div>
+
                 <div>
                     <strong>CHES Workspace</strong>
-                    <small>Personal learning space</small>
+                    <small>Personal learning archive</small>
                 </div>
             </div>
-            <div class="sidebar-footer">© 2026 CHES</div>
+
+            <div class="sidebar-footer">
+                © 2026 CHES
+            </div>
+
         </div>
+
     </aside>
 
+
+    <!-- MAIN CONTENT -->
     <main class="main-content">
 
+        <!-- TOPBAR -->
         <header class="topbar">
-            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-            <div class="breadcrumb">Workspace / <strong id="breadcrumb">Dashboard</strong></div>
-            <div class="topbar-actions">
 
-            <div class="topbar-actions">
-                
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Buka menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <div class="breadcrumb">
+                CHES / <strong id="breadcrumb">Profil</strong>
+            </div>
+
+            <!-- LOGO MARKETPLACE -->
             <div class="marketplace-links">
-                <a href="https://shopee.co.id/roofair"
-                   class="marketplace-link"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   aria-label="Buka Shopee">
+
+                <a
+                    href="https://shopee.co.id/roofair"
+                    class="marketplace-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Kunjungi Shopee"
+                >
                     <img src="assets/shopee-logo.png" alt="Shopee">
                 </a>
-        
-                <a href="https://www.tokopedia.com/roofairofficial"
-                   class="marketplace-link"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   aria-label="Buka Tokopedia">
+
+                <a
+                    href="https://www.tokopedia.com/roofairofficial"
+                    class="marketplace-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Kunjungi Tokopedia"
+                >
                     <img src="assets/tokped-logo.png" alt="Tokopedia">
                 </a>
+
             </div>
-        
-            <div class="top-profile">
-                <div class="avatar" id="topAvatar">U</div>
-                <span id="topName">User</span>
-            </div>
-        
-        </div>
+
         </header>
+
+
         <div class="content">
 
-            <section class="page active" id="dashboard">
+            <!-- ====================== -->
+            <!-- PROFILE PAGE -->
+            <!-- ====================== -->
 
-                <div class="welcome">
-                    <div>
-                        <span class="eyebrow">PERSONAL LEARNING SPACE</span>
-                        <h1>Welcome back, <span id="welcomeName">Student</span>!</h1>
-                        <p>Kelola materi dan rangkuman perkuliahanmu di satu tempat.</p>
-                    </div>
-                    <div class="welcome-decoration">✦</div>
-                </div>
-
-                <div class="section-heading">
-                    <div>
-                        <h2>Overview</h2>
-                        <p>Ringkasan aktivitas pembelajaranmu.</p>
-                    </div>
-                </div>
-
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon blue">▤</div>
-                        <span>Total Mata Kuliah</span>
-                        <h2>01</h2>
-                        <small>Mata kuliah aktif</small>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon purple">▣</div>
-                        <span>Total Materi</span>
-                        <h2 id="totalMaterials">0</h2>
-                        <small>Materi tersimpan</small>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon green">✓</div>
-                        <span>Dokumen</span>
-                        <h2 id="totalFiles">0</h2>
-                        <small>File terlampir</small>
-                    </div>
-                </div>
-
-                <div class="dashboard-grid">
-                    <div class="panel course-panel">
-                        <div class="panel-heading">
-                            <div>
-                                <h3>Mata Kuliah Saya</h3>
-                                <p>Ruang belajar utama</p>
-                            </div>
-                            <span class="status">Aktif</span>
-                        </div>
-
-                        <div class="course-preview">
-                            <div class="course-icon">📚</div>
-                            <div class="course-info">
-                                <span class="eyebrow">MY COURSE</span>
-                                <h3 id="dashboardCourse">Nama Mata Kuliah</h3>
-                                <p id="dashboardLecturer">Nama Dosen</p>
-                            </div>
-                        </div>
-
-                        <div class="course-bottom">
-                            <span id="dashboardCount">0 materi tersedia</span>
-                            <button class="text-button" onclick="showPage('course')">
-                                Buka Materi →
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="panel activity-panel">
-                        <div class="panel-heading">
-                            <div>
-                                <h3>Aktivitas Terbaru</h3>
-                                <p>Materi yang terakhir ditambahkan</p>
-                            </div>
-                        </div>
-                        <div id="recentActivities" class="activity-list">
-                            <div class="empty-state">Belum ada aktivitas.</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="page" id="profile">
+            <section class="page active" id="profile">
 
                 <div class="page-heading">
                     <span class="eyebrow">PERSONAL INFORMATION</span>
+
                     <h1>My Profile</h1>
-                    <p>Informasi pribadi dan identitas akademik.</p>
+
+                    <p>
+                        Informasi pribadi dan identitas akademik.
+                    </p>
                 </div>
 
+
                 <div class="profile-card">
+
                     <div class="profile-cover"></div>
 
                     <div class="profile-body">
-                        <div class="profile-avatar" id="profileAvatar">U</div>
+
+                        <img
+                            src="assets/profile.jpg"
+                            alt="Foto profil"
+                            class="profile-avatar"
+                            id="profilePhoto"
+                        >
 
                         <div class="profile-name">
-                            <h2 id="profileDisplayName">Your Name</h2>
+
+                            <h2 id="profileDisplayName">
+                                Your Name
+                            </h2>
+
                             <p>Mahasiswa</p>
+
                         </div>
 
-                        <button class="primary-button edit-profile-btn" onclick="openProfileModal()">
-                            ✎ Edit Profile
-                        </button>
 
                         <div class="profile-details">
+
                             <div class="detail-item">
                                 <span>Nama Lengkap</span>
                                 <strong id="profileName">-</strong>
                             </div>
+
                             <div class="detail-item">
                                 <span>NIM</span>
                                 <strong id="profileNim">-</strong>
                             </div>
+
                             <div class="detail-item">
                                 <span>Universitas</span>
                                 <strong id="profileUniversity">-</strong>
                             </div>
+
                             <div class="detail-item">
                                 <span>Program Studi</span>
                                 <strong id="profileMajor">-</strong>
                             </div>
+
                             <div class="detail-item">
                                 <span>Email</span>
                                 <strong id="profileEmail">-</strong>
                             </div>
+
                             <div class="detail-item">
                                 <span>Deskripsi</span>
-                                <strong id="profileBio">Belum ada deskripsi.</strong>
+                                <strong id="profileBio">
+                                    Belum ada deskripsi.
+                                </strong>
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </section>
 
-            <section class="page" id="course">
+
+            <!-- ====================== -->
+            <!-- ARCHIVE PAGE -->
+            <!-- ====================== -->
+
+            <section class="page" id="archive">
 
                 <div class="page-heading">
-                    <span class="eyebrow">ACADEMIC WORKSPACE</span>
-                    <h1>My Course</h1>
-                    <p>Kelola dan simpan seluruh rangkuman materi perkuliahan.</p>
+
+                    <span class="eyebrow">ACADEMIC DOCUMENTATION</span>
+
+                    <h1>Arsip Rangkuman</h1>
+
+                    <p>
+                        Kumpulan rangkuman materi perkuliahan Cyberpreneurship.
+                    </p>
+
                 </div>
 
+
+                <!-- COURSE INFORMATION -->
                 <div class="course-header">
-                    <div class="course-header-icon">📖</div>
-                    <div class="course-header-info">
-                        <span class="eyebrow">ACTIVE COURSE</span>
-                        <h2 id="courseTitle">Nama Mata Kuliah</h2>
-                        <p id="courseLecturer">Nama Dosen</p>
+
+                    <div class="course-header-icon">
+                        📚
                     </div>
-                    <button class="outline-button" onclick="openCourseModal()">✎ Edit</button>
+
+                    <div class="course-header-info">
+
+                        <span class="eyebrow">MY COURSE</span>
+
+                        <h2 id="courseTitle">
+                            Cyberpreneurship
+                        </h2>
+
+                        <p id="courseLecturer">
+                            Materi Perkuliahan
+                        </p>
+
+                    </div>
+
+                    <div class="course-status">
+                        ARSIP
+                    </div>
+
                 </div>
 
+
+                <!-- ARCHIVE STATISTICS -->
+                <div class="archive-summary">
+
+                    <div>
+                        <span>Total Rangkuman</span>
+                        <h2 id="totalMaterials">0</h2>
+                    </div>
+
+                    <div>
+                        <span>Pertemuan</span>
+                        <h2>01 - 16</h2>
+                    </div>
+
+                    <div>
+                        <span>Status</span>
+                        <h2 class="readonly-label">READ ONLY</h2>
+                    </div>
+
+                </div>
+
+
+                <!-- MATERIAL LIST -->
                 <div class="materials-heading">
+
                     <div>
                         <h2>Daftar Materi</h2>
-                        <p>Seluruh rangkuman materi perkuliahanmu.</p>
+
+                        <p>
+                            Pilih materi untuk membaca rangkumannya.
+                        </p>
                     </div>
-                    <button class="primary-button" onclick="openMaterialModal()">
-                        + Tambah Materi
-                    </button>
+
                 </div>
 
+
                 <div class="materials-list" id="materialsList">
-                    <div class="empty-card">
-                        <div>📂</div>
-                        <h3>Belum ada materi</h3>
-                        <p>Mulai tambahkan rangkuman materi perkuliahanmu.</p>
-                        <button class="primary-button" onclick="openMaterialModal()">
-                            + Tambah Materi Pertama
-                        </button>
-                    </div>
+
+                    <!-- Diisi otomatis oleh script.js -->
+
                 </div>
 
             </section>
 
         </div>
+
     </main>
+
 </div>
 
-<div class="modal-overlay" id="profileModal">
-    <div class="modal">
-        <div class="modal-header">
-            <h2>Edit Profile</h2>
-            <button onclick="closeModal('profileModal')">✕</button>
-        </div>
 
-        <form id="profileForm">
-            <label>Nama Lengkap</label>
-            <input id="inputName" required>
+<!-- MOBILE SIDEBAR OVERLAY -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-            <label>NIM</label>
-            <input id="inputNim">
 
-            <label>Universitas</label>
-            <input id="inputUniversity">
-
-            <label>Program Studi</label>
-            <input id="inputMajor">
-
-            <label>Email</label>
-            <input id="inputEmail" type="email">
-
-            <label>Deskripsi Diri</label>
-            <textarea id="inputBio" rows="3"></textarea>
-
-            <label>Foto Profil</label>
-            <input id="inputPhoto" type="file" accept="image/*">
-
-            <div class="modal-actions">
-                <button type="button" class="outline-button" onclick="closeModal('profileModal')">Batal</button>
-                <button type="submit" class="primary-button">Simpan</button>
-            </div>
-        </form>
-    </div>
-</div>
-
-<div class="modal-overlay" id="courseModal">
-    <div class="modal">
-        <div class="modal-header">
-            <h2>Edit Mata Kuliah</h2>
-            <button onclick="closeModal('courseModal')">✕</button>
-        </div>
-
-        <form id="courseForm">
-            <label>Nama Mata Kuliah</label>
-            <input id="inputCourse" required>
-
-            <label>Nama Dosen</label>
-            <input id="inputLecturer">
-
-            <div class="modal-actions">
-                <button type="button" class="outline-button" onclick="closeModal('courseModal')">Batal</button>
-                <button type="submit" class="primary-button">Simpan</button>
-            </div>
-        </form>
-    </div>
-</div>
-
-<div class="modal-overlay" id="materialModal">
-    <div class="modal">
-        <div class="modal-header">
-            <h2 id="materialModalTitle">Tambah Materi</h2>
-            <button onclick="closeModal('materialModal')">✕</button>
-        </div>
-
-        <form id="materialForm">
-            <input type="hidden" id="editMaterialId">
-
-            <label>Judul Materi</label>
-            <input id="inputMaterialTitle" placeholder="Contoh: Materi 1 - Pengenalan" required>
-
-            <label>Deskripsi Singkat</label>
-            <input id="inputMaterialDescription" placeholder="Deskripsi materi">
-
-            <label>Rangkuman Materi</label>
-            <textarea id="inputMaterialContent" rows="7" placeholder="Tuliskan rangkuman materi di sini..."></textarea>
-
-            <label>Upload Dokumen (PDF, DOCX, PPTX, dll.)</label>
-            <input id="inputMaterialFile" type="file">
-
-            <small class="file-note">File maksimal 2 MB per dokumen.</small>
-
-            <div id="existingFile" class="existing-file"></div>
-
-            <div class="modal-actions">
-                <button type="button" class="outline-button" onclick="closeModal('materialModal')">Batal</button>
-                <button type="submit" class="primary-button">Simpan Materi</button>
-            </div>
-        </form>
-    </div>
-</div>
-
+<!-- DETAIL RANGKUMAN MODAL -->
 <div class="modal-overlay" id="detailModal">
+
     <div class="modal detail-modal">
+
         <div class="modal-header">
-            <h2 id="detailTitle">Detail Materi</h2>
-            <button onclick="closeModal('detailModal')">✕</button>
+
+            <div>
+                <span class="eyebrow">MATERIAL DETAILS</span>
+                <h2 id="detailTitle">Detail Materi</h2>
+            </div>
+
+            <button
+                class="close-modal"
+                id="closeDetail"
+                aria-label="Tutup"
+            >
+                ✕
+            </button>
+
         </div>
+
         <div id="detailContent" class="detail-content"></div>
+
     </div>
+
 </div>
+
 
 <script src="script.js" defer></script>
+
 </body>
 </html>
