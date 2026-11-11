@@ -1056,29 +1056,150 @@ h1 {
     }
 }
 
+/* =========================================
+   CHES - BACKGROUND & GLOBAL STYLE
+========================================= */
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.app {
+    min-height: 100vh;
+    background: transparent;
+}
+
+/* =========================================
+   MAIN CONTENT BACKGROUND
+========================================= */
+
+.main-content {
+    position: relative;
+    isolation: isolate;
+    margin-left: 250px;
+    min-height: 100vh;
+    background: transparent;
+}
+
+.main-content::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 0 250px;
+
+    background:
+        linear-gradient(
+            rgba(10, 25, 50, 0.40),
+            rgba(10, 25, 50, 0.40)
+        ),
+        url("../assets/niujins.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* =========================================
+   SIDEBAR & TOPBAR
+========================================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 20;
+}
+
+.topbar {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* =========================================
+   MARKETPLACE LINKS
+========================================= */
+
+.topbar-actions,
+.marketplace-links,
+.top-profile {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-actions {
+    gap: 22px;
+}
+
+.marketplace-links {
+    gap: 10px;
+}
+
+.marketplace-link {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.marketplace-link img {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.shopee-link:hover {
+    border-color: #EE4D2D;
+    box-shadow: 0 4px 12px rgba(238, 77, 45, 0.14);
+    transform: translateY(-2px);
+}
+
+.tokopedia-link:hover {
+    border-color: #03AC0E;
+    box-shadow: 0 4px 12px rgba(3, 172, 14, 0.14);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   PROFILE AVATAR
+========================================= */
+
 .avatar,
 .profile-avatar {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--light-blue);
-}
-
-.avatar {
     overflow: hidden;
     flex-shrink: 0;
 }
 
-.profile-avatar {
-    overflow: hidden;
-    flex-shrink: 0;
-    background-color: var(--light-blue);
-}
-
-
-/* =========================
-   PAGE NAVIGATION
-========================= */
+/* =========================================
+   PAGE NAVIGATION & ANIMATION
+========================================= */
 
 .page {
     display: none;
@@ -1091,10 +1212,14 @@ h1 {
     opacity: 1;
 }
 
-/* ANIMATION ENTER */
-
 .page.page-enter {
     animation: chesPageEnter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.page.page-exit {
+    display: block;
+    animation: chesPageExit 0.18s ease forwards;
+    pointer-events: none;
 }
 
 @keyframes chesPageEnter {
@@ -1111,14 +1236,6 @@ h1 {
     }
 }
 
-/* ANIMATION EXIT */
-
-.page.page-exit {
-    display: block;
-    animation: chesPageExit 0.18s ease forwards;
-    pointer-events: none;
-}
-
 @keyframes chesPageExit {
     from {
         opacity: 1;
@@ -1131,7 +1248,9 @@ h1 {
     }
 }
 
-/* NAVIGATION HOVER */
+/* =========================================
+   NAVIGATION HOVER
+========================================= */
 
 .nav-link {
     transition:
@@ -1144,183 +1263,98 @@ h1 {
     transform: translateX(4px);
 }
 
-/* REDUCE MOTION */
+/* =========================================
+   GLOBAL TEXT COLORS
+========================================= */
 
-@media (prefers-reduced-motion: reduce) {
-    .page.page-enter,
-    .page.page-exit {
-        animation: none;
-    }
-
-    .nav-link {
-        transition: none;
-    }
-}
-
-/* =================================
-   CHES - PHOTO BACKGROUND
-================================= */
-
-html,
-body {
-    min-height: 100%;
-    margin: 0;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-}
-
-/* Background utama dibuat transparan */
-.app {
-    min-height: 100vh;
-    background: transparent;
-}
-
-/* Sidebar transparan */
-.sidebar {
-    width: 250px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: var(--white);
-    border-right: 1px solid var(--border);
-    padding: 28px 20px;
-    display: flex;
-    flex-direction: column;
-    z-index: 20;
-    transition: .3s ease;
-}
-
-/* Topbar transparan */
-.topbar {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
-
-/* Area konten tidak menutupi foto */
-.main-content {
-    margin-left: 250px;
-    min-height: 100vh;
-
-    background:
-        linear-gradient(
-            rgba(10, 25, 50, 0.40),
-            rgba(10, 25, 50, 0.40)
-        ),
-        url("../assets/niujins.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-/* BACKGROUND FOTO KHUSUS AREA KONTEN */
-
-.main-content {
-    position: relative;
-    isolation: isolate;
-    margin-left: 250px;
-    min-height: 100vh;
-    background: transparent;
-}
-
-/* Layer foto */
-.main-content::before {
-    content: "";
-    position: fixed;
-
-    /* Mulai tepat setelah sidebar */
-    top: 0;
-    left: 250px;
-    right: 0;
-    bottom: 0;
-
-    background-image:
-        linear-gradient(
-            rgba(10, 25, 50, 0.40),
-            rgba(10, 25, 50, 0.40)
-        ),
-        url("../assets/niujins.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* Sidebar tetap putih dan berada di atas layer */
-.sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 250px;
-    height: 100vh;
-    background: #ffffff;
-    z-index: 20;
-}
-
-/* Area konten transparan */
-.content {
-    background: transparent;
-}
-
-/* Topbar tetap terlihat */
-.topbar {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
-
-/* =================================
-   CHES - GLOBAL FONT COLOR
-================================= */
-
-/* Judul utama setiap halaman */
 .page-heading h1,
 .section-heading h2,
 .materials-heading h2 {
     color: #ffffff;
 }
 
-/* Deskripsi dan keterangan */
 .page-heading p,
 .section-heading p,
 .materials-heading p {
     color: #dce6f5;
 }
 
-/* Judul dan informasi dashboard */
 .panel-heading h3 {
-    color: #172b4d;
+    color: var(--navy);
 }
 
-/* Navigasi sidebar */
 .nav-link {
     color: #778398;
 }
 
 .nav-link.active {
-    color: #3869e8;
+    color: var(--blue);
 }
 
-/* Breadcrumb */
 .breadcrumb {
-    color: #8792a5;
+    color: var(--muted);
 }
 
-.breadcrumb strong {
-    color: #172b4d;
-}
-
-/* Nama profil di topbar */
+.breadcrumb strong,
 .top-profile {
-    color: #172b4d;
+    color: var(--navy);
+}
+
+/* =========================================
+   RESPONSIVE TABLET & MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+    .main-content::before {
+        left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .topbar-actions {
+        gap: 10px;
+    }
+
+    .marketplace-links {
+        gap: 6px;
+    }
+
+    .marketplace-link {
+        width: 34px;
+        height: 34px;
+    }
+
+    .marketplace-link img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .top-profile {
+        gap: 7px;
+    }
+
+    .top-profile span {
+        max-width: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .page.page-enter,
+    .page.page-exit {
+        animation: none;
+    }
+
+    .nav-link,
+    .marketplace-link {
+        transition: none;
+    }
 }
